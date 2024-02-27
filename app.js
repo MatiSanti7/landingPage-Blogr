@@ -1,20 +1,20 @@
-const btnMenu = document.getElementById("btnMenu")
-const menu = document.getElementById("menu")
-const menuMore = document.querySelectorAll(".more") 
+const connectButton = document.querySelector('.li-connect');
+const contactToggleDesk = document.querySelector('.contacts-desktop');
+const hambIcon = document.querySelector('.hamburger-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+const contactsToggleMobile = document.querySelector('.contacts');
+const connectMobile = document.querySelector('.li-connect__mobile');
 
-btnMenu.addEventListener("click",()=>{
-    if (menu.classList.contains("active")) {
-        menu.classList.remove("active");
-        btnMenu.src = "/images/icon-hamburger.svg";
-    } else {
-        menu.classList.add("active");
-        btnMenu.src = "/images/icon-close.svg";
-    }
-})
+connectButton.addEventListener('click', contactDesk);
+hambIcon.addEventListener('click', menuToggle);
+connectMobile.addEventListener('click', connectButtonMobile);
 
-menuMore.forEach(more => {
-    more.addEventListener("click", () => {
-        const subMenu = more.nextElementSibling;
-        subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
-    })
-})
+function contactDesk () {
+    contactToggleDesk.classList.toggle('inactive');
+}
+function menuToggle () {
+    mobileMenu.classList.toggle('inactive');
+}
+function connectButtonMobile () {
+    contactsToggleMobile.classList.toggle('inactive');
+}
